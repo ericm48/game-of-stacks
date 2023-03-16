@@ -1,0 +1,13 @@
+apiVersion: kpack.io/v1alpha2
+kind: Image
+metadata:
+  name: app-image
+spec:
+  tag: "${APP_NAME}"
+  builder:
+    kind: ClusterBuilder
+    name: app-builder
+  source:
+    git:
+      url: "${APP_REPO}"
+      revision: main
