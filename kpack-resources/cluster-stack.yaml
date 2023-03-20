@@ -7,4 +7,4 @@ spec:
   buildImage:
     image: "paketobuildpacks/build:base-cnb"
   runImage:
-    image: "${RUN_IMAGE}"
+    image: paketobuildpacks/run:base-cnb

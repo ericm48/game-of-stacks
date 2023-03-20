@@ -4,6 +4,9 @@ metadata:
   name: app-builder
 spec:
   tag: app-builder
+  serviceAccountRef:
+    name: default
+    namespace: default
   stack:
     name: bionic-stack
     kind: ClusterStack
