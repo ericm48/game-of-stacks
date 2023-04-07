@@ -1,8 +1,8 @@
 #!/bin/bash
-set -eu
+set -eux
 
-docker login
-minikube start
+#docker login
+#eval $(minikube -p minikube docker-env)
 
 export KPACK_VERSION=$1
 kubectl apply -f https://github.com/pivotal/kpack/releases/download/v$KPACK_VERSION/release-$KPACK_VERSION.yaml

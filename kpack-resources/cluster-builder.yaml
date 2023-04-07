@@ -3,7 +3,7 @@ kind: ClusterBuilder
 metadata:
   name: app-builder
 spec:
-  tag: app-builder
+  tag: semmet95/kpack:app-builder
   serviceAccountRef:
     name: default
     namespace: default
