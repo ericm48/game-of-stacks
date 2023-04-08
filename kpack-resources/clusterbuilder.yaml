@@ -5,7 +5,7 @@ metadata:
 spec:
   tag: semmet95/kpack:app-builder
   serviceAccountRef:
-    name: default
+    name: dockerhub-auth
     namespace: default
   stack:
     name: bionic-stack
