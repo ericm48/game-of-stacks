@@ -18,8 +18,7 @@ chmod +x ./kpack-setup.sh
 ./kpack-setup.sh \
     $KPACK_VERSION \
     paketobuildpacks/run:base-cnb \
-    https://github.com/spring-io/initializr \
-    spring-io-initialzr
+    https://github.com/TEAMMATES/teammates
 ```
 
 ### Cleanup

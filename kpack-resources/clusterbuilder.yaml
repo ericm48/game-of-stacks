@@ -3,7 +3,7 @@ kind: ClusterBuilder
 metadata:
   name: app-builder
 spec:
-  tag: semmet95/kpack:app-builder
+  tag: semmet95/kpack-builder:latest
   serviceAccountRef:
     name: dockerhub-auth
     namespace: default

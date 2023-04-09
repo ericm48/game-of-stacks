@@ -18,8 +18,8 @@ sleep 10
 kubectl apply -f ./kpack-resources/clusterbuilder.yaml
 sleep 10
 
-export APP_NAME=$3
-export APP_REPO=$4
+export APP_REPO=$3
+export APP_NAME=semmet95/kpack-image:$(basename "$APP_REPO")
 yq e -i '.spec.tag = env(APP_NAME)' ./kpack-resources/image.yaml
 yq e -i '.spec.source.git.url = env(APP_REPO)' ./kpack-resources/image.yaml
-#kubectl apply -f ./kpack-resources/image.yaml
+kubectl apply -f ./kpack-resources/image.yaml

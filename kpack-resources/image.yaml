@@ -3,11 +3,12 @@ kind: Image
 metadata:
   name: app-image
 spec:
-  tag: https://github.com/spring-io/initializr
+  tag: semmet95/kpack-image:teammates
+  serviceAccountName: dockerhub-auth
   builder:
     kind: ClusterBuilder
     name: app-builder
   source:
     git:
-      url: spring-io-initialzr
-      revision: main
+      url: https://github.com/TEAMMATES/teammates
+      revision: master
