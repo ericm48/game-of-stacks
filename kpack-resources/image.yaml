@@ -3,12 +3,18 @@ kind: Image
 metadata:
   name: app-image
 spec:
-  tag: semmet95/kpack-image:teammates
-  serviceAccountName: dockerhub-auth
+  build:
+    env:
+      - name: BP_JAVA_VERSION
+        value: 8.*
   builder:
     kind: ClusterBuilder
     name: app-builder
+  cache:
+    volume:
+      size: "1.5Gi"
+  serviceAccountName: dockerhub-auth
   source:
-    git:
-      url: https://github.com/TEAMMATES/teammates
-      revision: master
+    blob:
+      url: https://storage.googleapis.com/build-service/sample-apps/spring-petclinic-2.1.0.BUILD-SNAPSHOT.jar
+  tag: semmet95/kpack-image:initializr

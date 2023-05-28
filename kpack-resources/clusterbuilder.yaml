@@ -16,5 +16,3 @@ spec:
   order:
   - group:
     - id: paketo-buildpacks/java
-  - group:
-    - id: paketo-buildpacks/nodejs
