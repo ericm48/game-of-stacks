@@ -1,18 +1,18 @@
 apiVersion: kpack.io/v1alpha2
 kind: ClusterBuilder
 metadata:
-  name: app-builder
+  name: tiny-cnb
 spec:
   tag: semmet95/kpack-builder:latest
   serviceAccountRef:
     name: dockerhub-auth
     namespace: default
   stack:
-    name: bionic-stack
+    name: tiny-cnb
     kind: ClusterStack
   store:
     name: buildpack-store
     kind: ClusterStore
   order:
-  - group:
-    - id: paketo-buildpacks/java
+    - group:
+        - id: paketo-buildpacks/java

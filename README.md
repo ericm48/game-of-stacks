@@ -19,15 +19,16 @@ export KPACK_VERSION=0.10.1
 chmod +x ./kpack-setup.sh
 ./kpack-setup.sh \
     $KPACK_VERSION \
-    paketobuildpacks/run:full-cnb
+    io.paketo.stacks.tiny \
+    paketobuildpacks/run:tiny-cnb
 ```
 
 ### Cleanup
 ```
-kubectl delete image app-image \
-&& kubectl delete clusterbuilder app-builder \
+kubectl delete image --all \
+&& kubectl delete clusterbuilder --all \
 && kubectl delete clusterstore buildpack-store \
-&& kubectl delete clusterstack bionic-stack \
+&& kubectl delete clusterstack --all \
 && kubectl delete -f https://github.com/pivotal/kpack/releases/download/v$KPACK_VERSION/release-$KPACK_VERSION.yaml \
 && minikube stop \
 && minikube delete

@@ -4,7 +4,7 @@ metadata:
   name: petclinic
 spec:
   containers:
-  - image: semmet95/kpack-image:initializr
+  - image: semmet95/kpack-image:full-cnb-b1.20230528.130720
     name: petclinic
     ports:
     - containerPort: 8080
