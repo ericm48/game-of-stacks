@@ -2,6 +2,7 @@
 * [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
 * Access to a kubernetes cluster (could use [minikube](https://minikube.sigs.k8s.io/docs/start/) for this)
 * A dockerhub repo to push the kpack resource images to
+* `trivy` to scan the built OCI images. Installation [instructions](https://aquasecurity.github.io/trivy/v0.41/getting-started/installation/).
 
 ## Execution
 * Create a secret on the cluster with your dockerhub credentials to enable pushing images (you need a docekrhub repo for this)+
