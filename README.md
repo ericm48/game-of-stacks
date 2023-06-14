@@ -7,7 +7,7 @@
 ## Execution
 
 * Replace every occurence of `semmet95` with your dockerhub username in the repo.
-* Create a secret on the cluster with your dockerhub credentials to enable pushing images (you need a docekrhub repo for this)
+* Create a secret on the cluster with your dockerhub credentials to enable pushing images.
 ```
 kubectl create secret docker-registry dockerhub-creds --docker-username=<dockerhub-username> --docker-password=<dockerhub-psword>
 ```
