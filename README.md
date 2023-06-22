@@ -17,13 +17,20 @@ kubectl create secret docker-registry dockerhub-creds --docker-username=<dockerh
 export KPACK_VERSION=0.10.1
 ```
 
+* Set the stack ID for the ClusterStack
+```
+export STACK_ID=io.paketo.stacks.tiny
+```
+
+* Set the run image for the ClusterStack
+```
+export RUN_IMAGE=paketobuildpacks/run:tiny-cnb
+```
+
 * Run the script as follows
 ```
 chmod +x ./kpack-setup.sh
-./kpack-setup.sh \
-    $KPACK_VERSION \
-    io.paketo.stacks.tiny \
-    paketobuildpacks/run:tiny-cnb
+./kpack-setup.sh
 ```
 
 ### Cleanup

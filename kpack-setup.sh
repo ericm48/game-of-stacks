@@ -5,8 +5,6 @@ kubectl apply -f https://github.com/pivotal/kpack/releases/download/v$KPACK_VERS
 
 sleep 10
 
-export STACK_ID=$2
-export RUN_IMAGE=$3
 export BUILD_IMAGE=${RUN_IMAGE/run/build}
 stack_name=$(echo "$RUN_IMAGE" | cut -d ":" -f 2)
 export STACK_NAME=$stack_name
