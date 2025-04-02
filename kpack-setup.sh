@@ -1,9 +1,8 @@
 #!/bin/bash
 set -e
 
-kubectl apply -f https://github.com/pivotal/kpack/releases/download/v$KPACK_VERSION/release-$KPACK_VERSION.yaml
-
-sleep 10
+#kubectl apply -f https://github.com/pivotal/kpack/releases/download/v$KPACK_VERSION/release-$KPACK_VERSION.yaml
+#sleep 10
 
 export BUILD_IMAGE=${RUN_IMAGE/run/build}
 stack_name=$(echo "$RUN_IMAGE" | cut -d ":" -f 2)
@@ -25,7 +24,7 @@ yq e -i '.spec.stack.name = env(STACK_NAME)' ./kpack-resources/clusterbuilder.ya
 kubectl apply -f ./kpack-resources/clusterbuilder.yaml
 sleep 10
 
-export APP_NAME=semmet95/kpack-image:"$stack_name"
+export APP_NAME=ericm24/kpack-image:"$stack_name"
 export IMAGE_NAME=app-image-"$stack_name"
 
 yq e -i '.metadata.name = env(IMAGE_NAME)' ./kpack-resources/image.yaml

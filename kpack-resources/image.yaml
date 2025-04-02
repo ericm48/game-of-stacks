@@ -1,15 +1,17 @@
 apiVersion: kpack.io/v1alpha2
 kind: Image
 metadata:
-  name: app-image-tiny-cnb
+  name: app-image-full-cnb
 spec:
   build:
     env:
       - name: BP_JAVA_VERSION
-        value: 8.*
+        value: 17.*
+        name: BP_LOG_LEVEL
+        value: DEBUG
   builder:
     kind: ClusterBuilder
-    name: tiny-cnb
+    name: full-cnb
   cache:
     volume:
       size: "1.5Gi"
@@ -17,4 +19,4 @@ spec:
   source:
     blob:
       url: https://storage.googleapis.com/build-service/sample-apps/spring-petclinic-2.1.0.BUILD-SNAPSHOT.jar
-  tag: semmet95/kpack-image:tiny-cnb
+  tag: ericm24/kpack-image:full-cnb

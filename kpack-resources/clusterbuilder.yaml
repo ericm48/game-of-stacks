@@ -1,14 +1,14 @@
 apiVersion: kpack.io/v1alpha2
 kind: ClusterBuilder
 metadata:
-  name: tiny-cnb
+  name: full-cnb
 spec:
-  tag: semmet95/kpack-builder:latest
+  tag: ericm24/kpack-builder:latest
   serviceAccountRef:
     name: dockerhub-auth
     namespace: default
   stack:
-    name: tiny-cnb
+    name: full-cnb
     kind: ClusterStack
   store:
     name: buildpack-store

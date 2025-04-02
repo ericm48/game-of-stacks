@@ -1,10 +1,10 @@
 apiVersion: kpack.io/v1alpha2
 kind: ClusterStack
 metadata:
-  name: tiny-cnb
+  name: full-cnb
 spec:
-  id: "io.paketo.stacks.tiny"
+  id: "io.buildpacks.stacks.bionic"
   buildImage:
-    image: paketobuildpacks/build:tiny-cnb
+    image: paketobuildpacks/build:full-cnb
   runImage:
-    image: paketobuildpacks/run:tiny-cnb
+    image: paketobuildpacks/run:full-cnb
